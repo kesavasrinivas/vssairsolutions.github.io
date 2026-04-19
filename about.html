@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – VSS Air Solutions</title>
+  <meta name="description" content="Learn about VSS Air Solutions – our mission, vision, values, and experienced team delivering HVAC and clean room excellence since 2019."/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .team-experience {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 56px;
+    }
+    .team-experience-header {
+      background: var(--navy);
+      color: white;
+      padding: 28px 36px;
+    }
+    .team-experience-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .team-experience-header p { opacity: 0.8; margin-top: 6px; font-size: 0.92rem; }
+    .experience-table { width: 100%; border-collapse: collapse; }
+    .experience-table th {
+      background: var(--bg-soft);
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .experience-table td {
+      padding: 16px 20px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .experience-table tr:last-child td { border-bottom: none; }
+    .experience-table tr:hover td { background: var(--bg-soft); }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--navy-light);
+      color: var(--navy);
+    }
+    #contact {
+      scroll-margin-top: 80px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info { }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 48px; height: 48px;
+      background: var(--navy-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-detail h4 { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 4px; }
+    .contact-detail p, .contact-detail a { font-size: 0.9rem; color: var(--text-secondary); }
+    .contact-detail a:hover { color: var(--navy); }
+    .contact-form-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .contact-form-box h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.83rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      background: white;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(13,76,146,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: var(--navy-dark); transform: translateY(-1px); }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <div class="brand-logo">VSS</div>
+    <div>
+      <div class="brand-name">VSS Air Solutions</div>
+      <div class="brand-sub">Private Limited</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Our Works</a></li>
+    <li><a href="about.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="eyebrow">Who We Are</span>
+  <h1>About VSS Air Solutions</h1>
+  <p>A committed team of HVAC specialists building cleaner, safer, and more efficient environments since 2019.</p>
+</section>
+
+<!-- COMPANY OVERVIEW -->
+<section class="section">
+  <div class="section-inner">
+    <div class="about-split">
+      <div class="about-image-collage">
+        <img class="collage-main" src="images/brochure-001.jpg" alt="VSS Air Solutions facility"/>
+        <img class="collage-secondary" src="images/intro-019.jpg" alt="HVAC system"/>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Our Story</span>
+        <h2>Built on Expertise, Driven by Excellence</h2>
+        <p>VSS Air Solutions Private Limited was established in 2019 in Hyderabad with a clear purpose — to become a comprehensive solution platform for HVAC systems that deliver better, cleaner environments for working and production areas.</p>
+        <p>Since our founding, we have been proficient in making ideal decisions for any HVAC requirement through expert guidance, custom-built frameworks, and dependable systems that meet the highest standards of clean room technology.</p>
+        <p>We are widely recognised for our responsiveness, craftsmanship, and quality of work. Our HVAC professionals have completed several assignments and left a large number of clients satisfied with our services.</p>
+        <ul class="list-checks">
+          <li>Founded 2019 in Hyderabad, Telangana</li>
+          <li>Specialises in pharmaceutical clean room environments</li>
+          <li>Team experience includes FDA audit support</li>
+          <li>Custom-designed systems for every project</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="mission-vision">
+      <div class="mv-card">
+        <h3>Our Mission</h3>
+        <p>To provide outstanding services and exceptional value to our customers, while maintaining the highest level of quality and integrity in everything we do.</p>
+      </div>
+      <div class="mv-card light">
+        <h3>Our Vision</h3>
+        <p>To be one of the best HVAC service providers in India, setting unmatched standards in quality, value and customer satisfaction — one project at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="section section-soft">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <span class="eyebrow">Our Values</span>
+      <h2>The Principles That Guide Us</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <h3>Integrity</h3>
+        <p>Upholding the highest ethical standards in all our business practices, always.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">⭐</div>
+        <h3>Excellence</h3>
+        <p>Aspiring to be the best in everything we do and driving continuous improvement.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">👥</div>
+        <h3>Teamwork</h3>
+        <p>We collaborate and work together as a unified team to succeed for our clients.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">💡</div>
+        <h3>Innovation</h3>
+        <p>Continuously seeking new ways to add value and solve problems for our customers.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🦺</div>
+        <h3>Safety</h3>
+        <p>Following all safety instructions and company procedures rigorously on every job site.</p>
+      </div>
+    </div>
+
+    <!-- Team Experience Table -->
+    <div class="team-experience">
+      <div class="team-experience-header">
+        <h3>Team Experience</h3>
+        <p>Our team brings more than 10 years of profound experience across all major HVAC domains.</p>
+      </div>
+      <table class="experience-table">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Experience</th>
+            <th>Key Activities</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Projects</strong></td>
+            <td><span class="badge">10+ Years</span></td>
+            <td>Turnkey clean room builds, AHU installation, ducting &amp; panel systems</td>
+          </tr>
+          <tr>
+            <td><strong>Production</strong></td>
+            <td><span class="badge">10+ Years</span></td>
+            <td>Manufacturing &amp; supply of AHUs, ventilation units, filters, dampers &amp; diffusers</td>
+          </tr>
+          <tr>
+            <td><strong>Validation</strong></td>
+            <td><span class="badge">10+ Years</span></td>
+            <td>HEPA integrity testing, particle count, air flow visualisation, FDA audit support</td>
+          </tr>
+          <tr>
+            <td><strong>Annual Maintenance (AMC)</strong></td>
+            <td><span class="badge">10+ Years</span></td>
+            <td>Preventive maintenance, troubleshooting, calibration and compliance upkeep</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- VALUED CUSTOMERS -->
+<section class="customers-section">
+  <div class="section-inner" style="max-width:1200px; margin:0 auto;">
+    <div class="section-header centered">
+      <span class="eyebrow">Trusted By</span>
+      <h2>Our Valued Customers</h2>
+      <p>We are proud to have served leading pharmaceutical and research organisations across India.</p>
+    </div>
+    <div class="customers-grid">
+      <div class="customer-card"><img src="images/intro-007.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-008.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-010.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-011.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-013.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-016.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-017.jpg" alt="Client logo"/></div>
+      <div class="customer-card"><img src="images/intro-018.jpg" alt="Client logo"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Contact Us</h2>
+      <p>Ready to discuss your HVAC or clean room requirements? Our team is here to help.</p>
+    </div>
+    <div class="contact-grid" style="margin-top:48px;">
+      <div class="contact-info">
+        <h3>We'd love to hear from you</h3>
+        <p style="color:var(--text-secondary); margin-bottom:32px; font-size:0.95rem;">Whether it's a new installation, a maintenance query, or just an enquiry — reach out and we'll respond promptly.</p>
+
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Registered Office</h4>
+            <p>Flat No – F2, HIG – 368, KPHB – 6th Phase,<br>Kukatpally, Hyderabad, Medchal District – 500072</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:+919849943106">09849943106</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:vssairsolutions@gmail.com">vssairsolutions@gmail.com</a>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; padding:24px; background:var(--navy-light); border-radius:var(--radius); border-left:4px solid var(--navy);">
+          <p style="font-size:0.9rem; color:var(--navy); font-style:italic; font-weight:500;">"Your secure and reliable partner always welcomes you."</p>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h3>Send us a message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="John"/>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Doe"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@company.com"/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 9000000000"/>
+        </div>
+        <div class="form-group">
+          <label for="service">Service of Interest</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Air Handling Units</option>
+            <option>HEPA &amp; AHU Filters</option>
+            <option>Cooling &amp; Heating Coils</option>
+            <option>Clean Room Solutions</option>
+            <option>Validation Services</option>
+            <option>Annual Maintenance (AMC)</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us about your project or requirement..."></textarea>
+        </div>
+        <button class="btn-submit" type="button">Send Message</button>
+      </div>
+    </div>
+
+    <!-- GOOGLE MAP -->
+    <div style="margin-top:56px;">
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:600; margin-bottom:16px; color:var(--text-primary);">Find Us Here</h3>
+      <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.404093913764!2d78.39303931486373!3d17.493697788012837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b19a0ca4d9%3A0x6c4c6f4e6a9d5a6b!2sKPHB%206th%20Phase%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1713500000000!5m2!1sen!2sin"
+          width="100%"
+          height="400"
+          style="border:0; display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="VSS Air Solutions Office Location">
+        </iframe>
+      </div>
+      <p style="margin-top:10px; font-size:0.82rem; color:var(--text-light); text-align:center;">
+        Flat No – F2, HIG – 368, KPHB – 6th Phase, Kukatpally, Hyderabad – 500072 &nbsp;|&nbsp;
+        <a href="https://maps.google.com/?q=KPHB+6th+Phase+Kukatpally+Hyderabad+500072" target="_blank" style="color:var(--navy); font-weight:500;">Open in Google Maps ↗</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">VSS Air Solutions Pvt. Ltd.</div>
+      <p>Complete HVAC and Clean Room solutions — from design to installation, validation and maintenance — for pharmaceutical and industrial facilities across India.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Our Works</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <p>Flat No – F2, HIG – 368,<br>KPHB – 6th Phase, Kukatpally,<br>Hyderabad – 500072</p>
+      <p style="margin-top:12px;">
+        📞 <a href="tel:+919849943106">09849943106</a><br>
+        ✉️ <a href="mailto:vssairsolutions@gmail.com">vssairsolutions@gmail.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 VSS Air Solutions Private Limited. All rights reserved.</span>
+    <span>Your secure and reliable partner.</span>
+  </div>
+</footer>
+
+</body>
+</html>

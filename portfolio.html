@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Works – VSS Air Solutions</title>
+  <meta name="description" content="Browse VSS Air Solutions' project portfolio — panel work, epoxy flooring, turnkey clean rooms, AHU installations and more across India."/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Filter tabs */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      padding: 9px 22px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.87rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    /* Project cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+      transition: all 0.25s;
+    }
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+
+    .project-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card-img-wrap img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-card-img-wrap img { transform: scale(1.07); }
+
+    .project-card-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--navy);
+      color: white;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .project-card-body { padding: 22px 24px; }
+    .project-card-body h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .project-card-body .location {
+      font-size: 0.83rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .project-card-body p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* Featured project */
+    .featured-project {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 40px;
+    }
+    .featured-project img { width: 100%; height: 340px; object-fit: cover; }
+    .featured-project-body {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-tag {
+      display: inline-block;
+      background: var(--navy-light);
+      color: var(--navy);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .featured-project-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .featured-project-body p { font-size: 0.93rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+    .scope-items { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .scope-item { font-size: 0.8rem; padding: 5px 12px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 50px; color: var(--text-secondary); }
+
+    /* Before/after section */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .ba-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .ba-label {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .ba-label.after { background: var(--navy); color: white; }
+    .ba-card img { width: 100%; height: 240px; object-fit: cover; }
+
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-project { grid-template-columns: 1fr; }
+      .featured-project img { height: 240px; }
+      .before-after-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <div class="brand-logo">VSS</div>
+    <div>
+      <div class="brand-name">VSS Air Solutions</div>
+      <div class="brand-sub">Private Limited</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html" class="active">Our Works</a></li>
+    <li><a href="about.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="eyebrow">Project Portfolio</span>
+  <h1>Works by VSS Air Solutions</h1>
+  <p>From panel painting to complete turnkey clean room projects — a look at what we've built for our valued clients across India.</p>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+  <div class="section-inner">
+
+    <!-- FEATURED PROJECT: TURNKEY -->
+    <div class="section-header">
+      <span class="eyebrow">Featured Project</span>
+      <h2>Turnkey Clean Room — Vidgas Science &amp; Technologies</h2>
+    </div>
+    <div class="featured-project">
+      <img src="images/works-008.jpg" alt="Turnkey project at Vidgas Science"/>
+      <div class="featured-project-body">
+        <span class="featured-tag">Turnkey Project</span>
+        <h2>Ducting, AHUs, Wall &amp; Ceiling Panels, Doors &amp; More</h2>
+        <p>A comprehensive turnkey clean room project completed for Vidgas Science &amp; Technologies at Kadechur, Karnataka. This project involved the full supply, design and installation of the complete clean room system.</p>
+        <p>Scope included HVAC ducting, Air Handling Units, wall &amp; ceiling panels, view glass windows, clean room doors, supply modules, return air raisers and SS grills.</p>
+        <div class="scope-items">
+          <span class="scope-item">Ducting</span>
+          <span class="scope-item">AHUs</span>
+          <span class="scope-item">Wall Panels</span>
+          <span class="scope-item">Ceiling Panels</span>
+          <span class="scope-item">View Glass Windows</span>
+          <span class="scope-item">Clean Room Doors</span>
+          <span class="scope-item">Supply Modules</span>
+          <span class="scope-item">Return Air Raisers</span>
+          <span class="scope-item">SS Grills</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALL PROJECTS GRID -->
+    <div class="section-header" style="margin-top:64px;">
+      <span class="eyebrow">All Projects</span>
+      <h2>More Works Across India</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-000.jpg" alt="Panel Work at Clininvent"/>
+          <span class="project-card-tag">Panel Work</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Clean Room Panel Installation</h3>
+          <div class="location">📍 Clininvent Research Pvt. Ltd, Gummadidala</div>
+          <p>Open-to-atmosphere panel work installation at Clininvent Research's facility, delivered to clean room standards.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-001.jpg" alt="Panel Painting at TCG Life Sciences"/>
+          <span class="project-card-tag">Panel Painting</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Panel Painting — Before &amp; After</h3>
+          <div class="location">📍 TCG Life Sciences, Calcutta</div>
+          <p>Full panel painting refurbishment at TCG Life Sciences, restoring clean room panels to like-new condition.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-002.jpg" alt="Panel Painting at Credo Life Sciences"/>
+          <span class="project-card-tag">Panel Painting</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Panel Painting</h3>
+          <div class="location">📍 Credo Life Sciences, Kothur</div>
+          <p>Panel painting works completed at Credo Life Sciences, ensuring a clean, sterile surface finish for pharmaceutical compliance.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-005.jpg" alt="SS Cladding"/>
+          <span class="project-card-tag">SS Cladding</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Panel Painting &amp; SS Cladding</h3>
+          <div class="location">📍 Credo Life Sciences, Kothur</div>
+          <p>Combined panel painting and stainless steel cladding for superior surface protection and clean room compliance.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-006.jpg" alt="Epoxy at KJS India"/>
+          <span class="project-card-tag">Epoxy Flooring</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Panel Installation &amp; Epoxy Flooring</h3>
+          <div class="location">📍 KJS India Pvt. Ltd, Pashamylaram</div>
+          <p>Old panel removal, new panel installation and epoxy flooring for a complete clean room renovation at KJS India.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-007.jpg" alt="KJS India flooring"/>
+          <span class="project-card-tag">Epoxy Flooring</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Epoxy Floor Finish</h3>
+          <div class="location">📍 KJS India Pvt. Ltd, Pashamylaram</div>
+          <p>High-quality epoxy floor coating applied across the facility for a seamless, hygienic, and durable clean room floor.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-010.jpg" alt="4.5m Wall Panels"/>
+          <span class="project-card-tag">Height Panel</span>
+        </div>
+        <div class="project-card-body">
+          <h3>4.5 Metre Height Wall Panels</h3>
+          <div class="location">📍 Synthokem Labs, Pashamylaram</div>
+          <p>Supply and installation of tall 4.5-metre height wall panels, a technically demanding clean room build for Synthokem Labs.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-011.jpg" alt="Double Door Wanbury"/>
+          <span class="project-card-tag">Doors</span>
+        </div>
+        <div class="project-card-body">
+          <h3>3.2 Metre Height Double Door</h3>
+          <div class="location">📍 Wanbury, Tanuku, Andhra Pradesh</div>
+          <p>Supply and installation of a 3.2-metre height clean room double door — precision-engineered for pharmaceutical-grade facilities.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-img-wrap">
+          <img src="images/works-009.jpg" alt="Project site"/>
+          <span class="project-card-tag">Installation</span>
+        </div>
+        <div class="project-card-body">
+          <h3>Clean Room Installation</h3>
+          <div class="location">📍 Multiple Locations</div>
+          <p>Ongoing clean room installation and commissioning projects across pharmaceutical and research facilities in India.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BEFORE / AFTER SECTION -->
+    <div class="section-header" style="margin-top:80px;">
+      <span class="eyebrow">Transformation</span>
+      <h2>Before &amp; After</h2>
+      <p>See the quality difference our panel painting and refurbishment services deliver.</p>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="ba-card">
+        <div class="ba-label">Before — TCG Life Sciences</div>
+        <img src="images/works-003.jpg" alt="Before panel painting"/>
+      </div>
+      <div class="ba-card">
+        <div class="ba-label after">After — TCG Life Sciences</div>
+        <img src="images/works-004.jpg" alt="After panel painting"/>
+      </div>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="ba-card">
+        <div class="ba-label">Before — Credo Life Sciences</div>
+        <img src="images/works-012.jpg" alt="Before cladding"/>
+      </div>
+      <div class="ba-card">
+        <div class="ba-label after">After — Credo Life Sciences</div>
+        <img src="images/works-013.jpg" alt="After cladding"/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="section-inner">
+    <h2>Have a Project in Mind?</h2>
+    <p>Talk to our team and let's build something exceptional together.</p>
+    <a href="about.html#contact" class="btn-white">Start a Conversation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">VSS Air Solutions Pvt. Ltd.</div>
+      <p>Complete HVAC and Clean Room solutions — from design to installation, validation and maintenance — for pharmaceutical and industrial facilities across India.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Our Works</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <p>Flat No – F2, HIG – 368,<br>KPHB – 6th Phase, Kukatpally,<br>Hyderabad – 500072</p>
+      <p style="margin-top:12px;">
+        📞 <a href="tel:+919849943106">09849943106</a><br>
+        ✉️ <a href="mailto:vssairsolutions@gmail.com">vssairsolutions@gmail.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 VSS Air Solutions Private Limited. All rights reserved.</span>
+    <span>Your secure and reliable partner.</span>
+  </div>
+</footer>
+
+</body>
+</html>
